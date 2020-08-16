@@ -1,0 +1,115 @@
+
+********************************    01jdbc    ****************************
+
+
+
+
+********************************    02 jdbcTemplate    ****************************
+0201
+  引入 spring 相关
+      spring-core
+      spring-context
+      spring-context-support
+      spring-test
+      spring-jdbc
+
+  引入 其他
+      druid
+	  mysql-connector-java
+	  oracle.ojdbc6
+	  slf4j-api
+	  slf4j-log4j12
+	  lombok
+	  jackson-databind
+	  hutool-all
+
+0202  新增资源
+     applicationContext.xml
+                 开启注解扫描
+                 SpringUtil
+                 加载所有的*.properties
+                 数据源datasource
+                 jdbcTemplate
+     jdbc.properties
+     		#mySql
+     		jdbc.url=jdbc:mysql://127.0.0.1:3306/xgzx?characterEncoding=UTF-8
+     		jdbc.username=root
+     		jdbc.password=123456
+     		#oracle
+     		#jdbc.url=jdbc:oracle:thin:@192.168.1.50:1521:xudb
+     		#jdbc.username=XUZHONG
+     		#jdbc.password=XUZHONG
+     		...
+
+0203  运行
+     配置  jdbc.properties 为 mySql  版本  运行       persistenceDemo02Start  , 查看数据库变化
+     配置  jdbc.properties 为 oracle 版本  运行       persistenceDemo02Start  , 查看数据库变化  ，注意oralce数据库要把新增值删除了
+
+
+
+
+********************************   03 BeetSql     ****************************
+
+
+0301
+  引入 spring 相关
+      spring-core
+      spring-context
+      spring-context-support
+      spring-test
+
+  引入 其他
+      druid
+	  mysql-connector-java
+	  oracle.ojdbc6
+	  com.ibeetlbeetl
+	  com.ibeetl.beetlsql
+	  slf4j-api
+	  slf4j-log4j12
+	  lombok
+	  jackson-databind
+	  hutool-all
+
+0302  新增资源
+     applicationContext.xml
+                 开启注解扫描
+                 SpringUtil
+                 加载所有的*.properties
+                 数据源datasource
+                 <bean id="beetlSQLManagerInit"  init-method="init" />
+                 <bean id="userInfoController" init-method="init" />
+     jdbc.properties
+     		#mySql
+     		jdbc.url=jdbc:mysql://127.0.0.1:3306/xgzx?characterEncoding=UTF-8
+     		jdbc.username=root
+     		jdbc.password=123456
+     		#oracle
+     		#jdbc.url=jdbc:oracle:thin:@192.168.1.50:1521:xudb
+     		#jdbc.username=XUZHONG
+     		#jdbc.password=XUZHONG
+     		...
+
+0303  运行
+     配置  jdbc.properties 为 mySql  版本  运行       persistenceDemo03Start  ,
+     配置  jdbc.properties 为 oracle 版本  运行       persistenceDemo03Start  ,
+
+
+        ##数据库类型dbStyleName名称 是个枚举  ：    OracleStyle   MySqlStyle
+        dbStyleName=MySqlStyle
+        jdbc.driver=com.mysql.jdbc.Driver
+        jdbc.url=jdbc:mysql://127.0.0.1:3306/xgzx?characterEncoding=UTF-8
+        jdbc.username=root
+        jdbc.password=123456
+
+
+********************************    04 Jpa    ****************************
+
+
+
+
+********************************   05MyBatis     ****************************
+
+
+
+
+********************************        ****************************
