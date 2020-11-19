@@ -42,14 +42,10 @@
     </bean>
 
 
-    <bean class="com.tiza.leo.beetSql.util.BeetlSQLManagerInit" id="beetlSQLManagerInit"  init-method="init" >
-    </bean>
-    <bean class="com.tiza.leo.beetSql.controller.UserInfoController" id="userInfoController" init-method="init">
-
-    </bean>
-
-
-
-
+    <!--  BeetlSQLManagerInit 需要实例化 SQLManager 所以需要init方法  -->
+    <bean class="com.tiza.leo.beetSql.util.BeetlSQLManagerInit" id="beetlSQLManagerInit"  init-method="init" />
+    <!--需要注入 SQLManager 所以需要 init 方法 -->
+    <!--当然这块的写法不标准，应该在dal中注入 SQLManager ,不应该在controller 中注入-->
+    <bean class="com.tiza.leo.beetSql.controller.UserInfoController" id="userInfoController" init-method="init" />
 
 </beans>
