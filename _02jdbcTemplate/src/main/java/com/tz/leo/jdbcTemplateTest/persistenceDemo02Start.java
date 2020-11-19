@@ -36,6 +36,8 @@ public class persistenceDemo02Start {
         // UserInfo 实例
         UserInfo userInfo = new UserInfo();
         userInfo.setUiId(BigDecimal.valueOf(randomInt));
+        userInfo.setUiIsLogin(1);
+        userInfo.setUiIsAdmin(1);
         userInfo.setUiName("liLei");
         userInfo.setOriId(BigDecimal.valueOf(22));
         userInfo.setUiInsertTime(cn.hutool.core.date.DateUtil.dateSecond());
