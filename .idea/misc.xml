@@ -6,8 +6,6 @@
         <option value="$PROJECT_DIR$/01jdbc/pom.xml" />
         <option value="$PROJECT_DIR$/_02jdbcTemplate/pom.xml" />
         <option value="$PROJECT_DIR$/_03BeetSql/pom.xml" />
-        <option value="$PROJECT_DIR$/_05MyBatis/pom.xml" />
-        <option value="$PROJECT_DIR$/_04Jpa/pom.xml" />
       </list>
     </option>
   </component>
