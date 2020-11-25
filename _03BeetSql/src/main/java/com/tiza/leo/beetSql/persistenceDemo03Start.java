@@ -1,7 +1,7 @@
 package com.tiza.leo.beetSql;
 
 import com.tiza.leo.beetSql.controller.UserInfoController;
-import com.tiza.leo.beetSql.entity.UserInfo;
+import com.tiza.leo.beetSql.entity.BeetlUser;
 import com.tiza.leo.beetSql.util.JacksonUtil;
 import com.tiza.leo.beetSql.util.SpringUtil;
 import org.slf4j.Logger;
@@ -27,10 +27,10 @@ public class persistenceDemo03Start {
         System.out.println("=================   没有使用spring实例化 UserInfoController     start =====================");
         UserInfoController userInfoController = new UserInfoController();
         userInfoController.init();
-        UserInfo userInfo = (UserInfo) userInfoController.find(294);  //294
-        System.out.println("====================  print UserInfo  =============================");
-        System.out.println(JacksonUtil.toJson(userInfo));
-        System.out.println("====================   print UserInfo  =============================");
+        BeetlUser beetlUser = (BeetlUser) userInfoController.find(294);  //294
+        System.out.println("====================  print BeetlUser  =============================");
+        System.out.println(JacksonUtil.toJson(beetlUser));
+        System.out.println("====================   print BeetlUser  =============================");
         System.out.println("=================没有使用spring实例化 UserInfoController    end ==========================");
 
         */
@@ -38,8 +38,8 @@ public class persistenceDemo03Start {
         //  使用spring实例化 UserInfoController
         System.out.println("=================  使用spring实例化 UserInfoController    start ==========================");
         UserInfoController userInfoController = SpringUtil.getBean("userInfoController");
-        UserInfo userInfo = (UserInfo) userInfoController.find(294);
-        System.out.println(JacksonUtil.toJson(userInfo));
+        BeetlUser beetlUser = (BeetlUser) userInfoController.find(294);
+        System.out.println(JacksonUtil.toJson(beetlUser));
         System.out.println("=================使用spring实例化 UserInfoController    end ==========================");
 
 

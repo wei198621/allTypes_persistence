@@ -12,7 +12,8 @@ import java.util.Date;
  * Content:
  */
 @Data
-public class UserInfo implements Serializable {
+
+public class BeetlUser implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -186,7 +187,7 @@ public class UserInfo implements Serializable {
      */
     private String uiSmsCode;
 
-    public UserInfo() {
+    public BeetlUser() {
     }
 
 

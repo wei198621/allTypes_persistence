@@ -11,6 +11,9 @@
         <module name="_02jdbcTemplate" />
         <module name="_03BeetSql" />
         <module name="_04Jap" />
+        <module name="_04SpringDataJpa" />
+        <module name="_05springboot_mybatis_xml" />
+        <module name="_06springboot_mybatis_annotation" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -19,7 +22,10 @@
       <module name="_03BeetSql" target="1.8" />
       <module name="_04Jap" target="1.5" />
       <module name="_04Jpa" target="1.5" />
+      <module name="_04SpringDataJpa" target="1.8" />
       <module name="_05MyBatis" target="1.5" />
+      <module name="_05springboot_mybatis_xml" target="1.8" />
+      <module name="_06springboot_mybatis_annotation" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

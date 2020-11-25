@@ -1,7 +1,7 @@
 sample
 ===
 
-select #use("cols")# from user_info where #use("condition")#
+select #use("cols")# from beetl_user where #use("condition")#
 
 cols
 ===

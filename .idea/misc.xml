@@ -6,6 +6,9 @@
         <option value="$PROJECT_DIR$/01jdbc/pom.xml" />
         <option value="$PROJECT_DIR$/_02jdbcTemplate/pom.xml" />
         <option value="$PROJECT_DIR$/_03BeetSql/pom.xml" />
+        <option value="$PROJECT_DIR$/_04SpringDataJpa/pom.xml" />
+        <option value="$PROJECT_DIR$/_05springboot_mybatis_xml/pom.xml" />
+        <option value="$PROJECT_DIR$/_06springboot_mybatis_annotation/pom.xml" />
       </list>
     </option>
   </component>

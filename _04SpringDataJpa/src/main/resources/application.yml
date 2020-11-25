@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    #driver-class-name: com.mysql.cj.jdbc.Driver    #mysql-connector-java   8.0.13  版本的时候使用
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/xgzx?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: root
+
+  jpa:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+        #   dialect 路径需要按照自己的路径改写
+        dialect: com.tiza.leo.springdatajpa.config.MysqlConfig
+        format_sql: true
+    show-sql: true
