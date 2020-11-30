@@ -1,0 +1,1 @@
+没有sql 自动生成  hibernate_sequence ,user  user_detail 三张表，原因待查
