@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tiza.leo.dao.EmpDAO">
+
+    <!--
+		查询:select标签
+		id :接口中的方法名
+		parameterType: 参数类型
+		resultType   : 处理结果集  自动封装
+		注意:sql语句后不要出现";"号
+	 -->
+    <select id="findById" parameterType="String" resultType="com.tiza.leo.entity.Emp">
+        select id,name,age,birthday bir from mybatis_baizhi_emp where id=#{id}
+    </select>
+
+    <select id="findByIdAndName" resultType="com.tiza.leo.entity.Emp">
+        select id,name,age,birthday bir from mybatis_baizhi_emp where id=#{id} and name =#{name}
+    </select>
+
+    <select id="findAll" resultType="com.tiza.leo.entity.Emp">
+        select id,name,age,birthday bir from mybatis_baizhi_emp;
+    </select>
+
+    <update id="update" parameterType="com.tiza.leo.entity.Emp">
+        update mybatis_baizhi_emp set name=#{name} ,age=#{age},birthday=#{bir} where id=#{id}
+    </update>
+
+    <delete id="delete" parameterType="String">
+        DELETE from mybatis_baizhi_emp where id =#{id}
+    </delete>
+
+    <insert id="insert" parameterType="com.tiza.leo.entity.Emp">
+        insert into mybatis_baizhi_emp values(#{id},#{name},#{age},#{bir})
+    </insert>
+
+</mapper>

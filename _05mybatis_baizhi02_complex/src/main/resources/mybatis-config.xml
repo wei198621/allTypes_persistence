@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <properties resource="jdbc.properties"/>
+
+    <!-- 给实体类起别名 -->
+    <typeAliases>
+        <!--
+            type 给那个类起别名
+            alias 别名
+         -->
+        <typeAlias type="com.tiza.leo.mybatis_baizhi02_complex.entity.Emp" alias="Emp"/>
+    </typeAliases>
+
+    <!-- 配置数据库连接的环境 -->
+    <environments default="development">
+        <environment id="development">
+            <!-- 事务管理 type:指定事务管理的方式  JDBC-->
+            <transactionManager type="JDBC"/>
+            <!-- 数据源 连接相关  type: 是不是用连接池形式   POOLED(使用连接池)  UNPOOL(不用连接池) -->
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url"   value="jdbc:mysql://127.0.0.1:3306/xgzx?serverTimezone=UTC"/>
+                <property name="username"  value="root"/>
+                <property name="password"  value="123456"/>
+            </dataSource>
+        </environment>
+        <environment id="development_oracle">
+            <!-- 事务管理 type:指定事务管理的方式  JDBC-->
+            <transactionManager type="JDBC"/>
+            <!-- 数据源 连接相关  type: 是不是用连接池形式   POOLED(使用连接池)  UNPOOL(不用连接池) -->
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.oracle.driver}"/>
+                <property name="url"   value="${jdbc.oracle.url}"/>
+                <property name="username"  value="${jdbc.oracle.username}"/>
+                <property name="password"  value="${jdbc.oracle.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+        <!-- 引⼊Mapper.xml -->
+        <!--<package name=""/>-->
+        <mapper resource="mapper/EmpDAOMapper.xml"></mapper>
+        <mapper resource="mapper/UserDAOMapper.xml"></mapper>
+    </mappers>
+</configuration>

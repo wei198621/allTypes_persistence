@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.tiza.leo</groupId>
+    <artifactId>_05mybatis_baizhi01</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>asm</groupId>
+            <artifactId>asm</artifactId>
+            <version>3.3.1</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/asm-3.3.1.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>2.2.2</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/cglib-2.2.2.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>logging</artifactId>
+            <version>1.1.1</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/commons-logging-1.1.1.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>javassist</groupId>
+            <artifactId>javassist</artifactId>
+            <version>3.17</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/javassist-3.17.1-GA.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/log4j-1.2.17.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>log4j-api</groupId>
+            <artifactId>log4j</artifactId>
+            <version>2.0.2</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/log4j-api-2.0.2.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>log4j-core</groupId>
+            <artifactId>log4j</artifactId>
+            <version>2.0.2</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/log4j-core-2.0.2.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>3.2.8</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/mybatis-3.2.8.jar</systemPath>
+        </dependency>
+        <!--jdbc包-->
+        <dependency>
+            <groupId>oracle.jdbc</groupId>
+            <artifactId>jdbc</artifactId>
+            <version>6</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/ojdbc6.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j</artifactId>
+            <version>1.7.5</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/slf4j-api-1.7.5.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>slf4j-log4j12</groupId>
+            <artifactId>slf4j</artifactId>
+            <version>1.7.5</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/slf4j-log4j12-1.7.5.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.25</version>
+        </dependency>
+
+        <!--添加Oracle连接的依赖包-->
+        <dependency>
+            <groupId>com.oracle</groupId>
+            <artifactId>ojdbc6</artifactId>
+            <version>11.2.0.4.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>7.13.1</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/junit-4.13.1.jar</systemPath>
+        </dependency>
+
+    </dependencies>
+
+    
+</project>

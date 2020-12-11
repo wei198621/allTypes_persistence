@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tiza.leo.mybatis_baizhi02_complex.dao.UserDAO">
+
+    <!--
+		处理关联关系时  resultType无法将关系属性进行自动封装     只能处理单表简单类型(对象)
+
+		处理关系属性赋值 :使用resultMap
+			type:封装对象类型  如果是一个 直接写对象的全名(别名)  如果是多个 同样写泛型的类型
+			id : resultMap的名字
+	 -->
+    <resultMap id="user_card" type="com.tiza.leo.mybatis_baizhi02_complex.entity.User">
+        <!-- 用来封装user中的主键的值 column 数据库返回的列名   property 类中属性名 -->
+        <id column="userId" property="id"></id>
+        <!-- result 用来封装user中的普通属性值 -->
+        <result column="name" property="name" />
+        <result column="age" property="age" />
+        <result column="bir" property="bir" />
+        <!-- 关系属性封装 一对一  对象类型
+	 		association: 用来处理一对一关系属性封装
+	 		property : 关系属性名
+	 		javaType: 关系属性的类型
+	 	 -->
+        <association property="card" javaType="com.tiza.leo.mybatis_baizhi02_complex.entity.Card">
+            <id column="cardId" property="id" />
+            <result column="no" property="no" />
+            <result column="address" property="address" />
+            <result column="fork" property="fork"/>
+        </association>
+    </resultMap>
+
+    <!--
+            resultMap: 封装对象时使用外部的哪个resultMap进行封装  书写resultMap标签的id属性
+         -->
+    <select id="queryAll" resultMap="user_card">
+        select u.id userId,u.name,u.age,u.bir,
+		       c.id cardId,c.no,c.fork,c.address
+		from mybatis_baizhi_users u
+		left join mybatis_baizhi_card c
+		on  u.cardId = c.id
+    </select>
+</mapper>
