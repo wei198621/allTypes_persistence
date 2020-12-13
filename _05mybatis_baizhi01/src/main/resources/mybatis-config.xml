@@ -16,10 +16,10 @@
             <transactionManager type="JDBC"/>
             <!-- 数据源 连接相关  type: 是不是用连接池形式   POOLED(使用连接池)  UNPOOL(不用连接池) -->
             <dataSource type="POOLED">
-                <property name="driver" value="com.mysql.jdbc.Driver"/>
-                <property name="url"   value="jdbc:mysql://127.0.0.1:3306/xgzx?serverTimezone=UTC"/>
-                <property name="username"  value="root"/>
-                <property name="password"  value="123456"/>
+                <property name="driver" value="${jdbc.mysql.driver}"/>
+                <property name="url"   value="${jdbc.mysql.url}"/>
+                <property name="username"  value="${jdbc.mysql.username}"/>
+                <property name="password"  value="${jdbc.mysql.password}"/>
             </dataSource>
         </environment>
         <environment id="development_oracle">
