@@ -7,13 +7,13 @@ CREATE TABLE mybatis_baizhi_emp(
 	id VARCHAR(36) PRIMARY KEY,
 	NAME VARCHAR(40),
 	age INT,
-	birthday DATE
+	bir DATE
 );
 
-INSERT INTO mybatis_baizhi_emp(id ,NAME,age,birthday) VALUES('1','xiaowei',33,NOW());
-INSERT INTO mybatis_baizhi_emp(id ,NAME,age,birthday) VALUES('2','xiaowang',23,NOW());
+INSERT INTO mybatis_baizhi_emp(id ,NAME,age,bir) VALUES('1','xiaowei',33,NOW());
+INSERT INTO mybatis_baizhi_emp(id ,NAME,age,bir) VALUES('2','xiaowang',23,NOW());
 
-select id,name,age,birthday bir  from mybatis_baizhi_emp ;
+select id,name,age, bir  from mybatis_baizhi_emp ;
 
 ----------------------   oracle 方式
 -- 员工表
@@ -21,14 +21,14 @@ create table mybatis_baizhi_emp(
 	id varchar2(36) primary key,
 	name varchar2(40),
 	age number(3),
-	birthday TIMESTAMP
+	bir TIMESTAMP
 );
 
 -- drop table t_emp ;
 
 insert into mybatis_baizhi_emp values('2','小三',23,sysdate);
 
-select id,name,age,birthday bir  from mybatis_baizhi_emp
+select id,name,age, bir  from mybatis_baizhi_emp
 
 ------------------------------------------------------------------------------
 
@@ -63,11 +63,11 @@ delete from mybatis_baizhi_emp;
 	select id , name ,age , birthday from mybatis_baizhi_emp order by name
 
 	--2.给rownum获取一个范围
-	select e.*,rownum r from (select id , name ,age , birthday from mybatis_baizhi_emp order by name) e
+	select e.*,rownum r from (select id , name ,age , bir from mybatis_baizhi_emp order by name) e
 	where rownum < 9
 
 	--3.确定r起始位置
-	select e1.* from (select e.*,rownum r from (select id , name ,age , birthday from mybatis_baizhi_emp order by name) e
+	select e1.* from (select e.*,rownum r from (select id , name ,age , bir from mybatis_baizhi_emp order by name) e
 	where rownum <= 4(pageNow*pageSize)) e1 where r > 2 (pageNow-1)*pageSize
 
 

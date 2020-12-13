@@ -1,0 +1,5 @@
+测试步骤
+1.  TestEmpDAO      测试一对一
+2.  TestDeptDAO     测试一对多
+3.  TestStudentDAO  测试多对多     学生         对          课程
+                                student - student-course  - course

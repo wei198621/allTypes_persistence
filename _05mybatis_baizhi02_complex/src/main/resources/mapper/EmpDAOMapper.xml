@@ -13,15 +13,15 @@
     <!--name=#{name,jdbcType=VARCHAR},age=#{age,jdbcType=INTEGER},birthday=#{bir,jdbcType=DATE}-->
     <update id="update" parameterType="Emp">
         update mybatis_baizhi_emp set
-        name=#{name,jdbcType=VARCHAR},age=#{age},birthday=#{bir,jdbcType=DATE}
+        name=#{name,jdbcType=VARCHAR},age=#{age},bir=#{bir,jdbcType=DATE}
         where id=#{id}
     </update>
 
     <!--如下写法 oracle  -->
     <select id="selectByPage_Oracle" resultType="Emp">
         select e1.id,e1.name,e1.age,e1.bir from
-           ( select e.id,e.name,e.age,e.birthday bir,rownum r from
-               (select id,name,age,birthday from mybatis_baizhi_emp order by name) e
+           ( select e.id,e.name,e.age,e.bir,rownum r from
+               (select id,name,age,bir from mybatis_baizhi_emp order by name) e
            where rownum &lt;= #{pageNow}*#{pageSize} )e1
         where r &gt; (#{pageNow}-1)*#{pageSize}
     </select>
@@ -30,8 +30,8 @@
     <select id="selectByPage" resultType="Emp">
        SELECT e2.id,e2.name,e2.age,e2.bir FROM
           ( SELECT e1.id,e1.name,e1.age,e1.bir,e1.rownum as r  FROM
-              ( SELECT e.id,e.name,e.age,e.birthday bir,@rowno:=@rowno+1 AS rownum FROM
-                   (SELECT id,NAME,age,birthday FROM mybatis_baizhi_emp ,(SELECT @rowno:=0) t ORDER BY NAME) e
+              ( SELECT e.id,e.name,e.age,e.bir,@rowno:=@rowno+1 AS rownum FROM
+                   (SELECT id,NAME,age,bir FROM mybatis_baizhi_emp ,(SELECT @rowno:=0) t ORDER BY NAME) e
                )e1
         WHERE rownum &lt;= #{pageNow}*#{pageSize} )e2
         WHERE r &gt; (#{pageNow}-1)*#{pageSize}
@@ -48,6 +48,6 @@
     <!-- keyWords 只是占位符一部分 ，可以是人一直 比如 aaaa -->
     <!--select id,name,age,birthday bir from mybatis_baizhi_emp where name like '%'||#{keyWords}||'%'-->
     <select id="selectByLike" parameterType="String" resultType="Emp">
-        select id,name,age,birthday bir from mybatis_baizhi_emp where name like  '%'||#{keyWords}||'%'
+        select id,name,age,bir from mybatis_baizhi_emp where name like  '%'||#{keyWords}||'%'
     </select>
 </mapper>

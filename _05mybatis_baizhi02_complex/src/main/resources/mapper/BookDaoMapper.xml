@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tiza.leo.mybatis_baizhi02_complex.dao.BookDAO">
+    <sql id="commonFields">
+        id,name,publishDate pubDate,price,author
+    </sql>
+
+    <select id="selectAll" parameterType="com.tiza.leo.mybatis_baizhi02_complex.entity.Book" resultType="com.tiza.leo.mybatis_baizhi02_complex.entity.Book">
+        select <include refid="commonFields"/> from mybatis_baizhi_book
+    </select>
+
+    <select id="selectByFields" parameterType="com.tiza.leo.mybatis_baizhi02_complex.entity.Book" resultType="com.tiza.leo.mybatis_baizhi02_complex.entity.Book">
+        select <include refid="commonFields"/> from mybatis_baizhi_book
+        <where>
+            <if test="name!=null and name!=''">
+                name = #{name}
+            </if>
+            <if test="author!=null and author!=''">
+                and author = #{author}
+            </if>
+        </where>
+    </select>
+
+
+    <select id="selectByChoose" parameterType="com.tiza.leo.mybatis_baizhi02_complex.entity.Book" resultType="com.tiza.leo.mybatis_baizhi02_complex.entity.Book">
+        select <include refid="commonFields"/> from mybatis_baizhi_book
+        WHERE
+        <choose>
+            <when test="name!=null and name!=''">
+                name=#{name}
+            </when>
+            <when test="price!=null">
+                price=#{price}
+            </when>
+            <otherwise>
+                author=#{author}
+            </otherwise>
+        </choose>
+    </select>
+
+    <update id="update" parameterType="com.tiza.leo.mybatis_baizhi02_complex.entity.Book">
+        update mybatis_baizhi_book
+        <trim prefix="set" suffix="where" suffixOverrides=",">
+            <if test="name!=null and name!=''">
+                name=#{name}
+            </if>
+            <if test="author!=null and author!=''">
+                author =#{author},
+            </if>
+        </trim>
+        id=#{id}
+    </update>
+
+
+
+ <!--    * mysql  测试没有通过 在local zhan comp
+     * oracle 没有测试
+     *
+     * 一致 mysql 不支持  begin  end 批量处理语法 -->
+    <insert id="insertAll" parameterType="list">
+        BEGIN
+        <!--
+            collection:用来书写遍历集合类型
+            index : 当前遍历的索引  从0 开始
+            item  : 当前遍历元素的别名
+            open  : 在第一遍历之前加入的语句
+            close : 在最后一个次遍历之后加入的语句
+            separator: 在每一次遍历之后加入的语句   最后一次不加入
+         -->
+        <foreach collection="list" close=";" index="i" item="book" separator=";">
+            insert into mybatis_baizhi_book values(#{book.id},#{book.name},#{book.pubDate},#{i},#{book.author})
+        </foreach>
+        END;
+    </insert>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</mapper>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tiza.leo._05mybatis_baizhi03_complex_plus.dao.EmpDAO">
+    <resultMap id="empMap" type="com.tiza.leo._05mybatis_baizhi03_complex_plus.entity.Emp">
+        <id column="eid" property="id"/>
+        <result column="ename" property="name"/>
+        <result column="age" property="age"/>
+        <result column="salary" property="salary" />
+        <result column="bir" property="bir"/>
+        <!-- association 封装关系属性  一对一 -->
+        <association property="dept" javaType="com.tiza.leo._05mybatis_baizhi03_complex_plus.entity.Dept">
+            <id column="id" property="id"/>
+            <result column="name" property="name"/>
+        </association>
+    </resultMap>
+    <select id="queryAll" resultMap="empMap">
+        select d.id,d.name,e.id eid,e.name ename,e.age,e.salary,e.bir
+        from mybatis_baizhi_dept d
+        left join mybatis_baizhi_emps e on d.id  = e.deptId
+    </select>
+
+
+    <select id="queryAll02"  resultType="com.tiza.leo._05mybatis_baizhi03_complex_plus.dto.EmpDto">
+        select d.id,d.name,e.id eid,e.name ename,e.age,e.salary,e.bir
+        from mybatis_baizhi_dept d
+        left join mybatis_baizhi_emps e on d.id  = e.deptId
+    </select>
+
+
+
+
+</mapper>

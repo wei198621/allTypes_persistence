@@ -10,7 +10,7 @@
             type 给那个类起别名
             alias 别名
          -->
-        <typeAlias type="com.tiza.leo.mybatis_baizhi02_complex.entity.Emp" alias="Emp"/>
+        <typeAlias type="com.tiza.leo._05mybatis_baizhi03_complex_plus.entity.Emp" alias="Emp"/>
     </typeAliases>
 
     <!-- 配置数据库连接的环境 -->
@@ -43,8 +43,7 @@
         <!-- 引⼊Mapper.xml -->
         <!--<package name=""/>-->
         <mapper resource="mapper/EmpDAOMapper.xml"></mapper>
-        <mapper resource="mapper/UserDAOMapper.xml"></mapper>
-        <mapper resource="mapper/CardDAOMapper.xml"></mapper>
-        <mapper resource="mapper/BookDaoMapper.xml"></mapper>
+        <mapper resource="mapper/DeptDAOMapper.xml"></mapper>
+        <mapper resource="mapper/StudentDAOMapper.xml"></mapper>
     </mappers>
 </configuration>

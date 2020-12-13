@@ -2,21 +2,22 @@
 
 
 ------------------ myslq  方式
+-- drop table   mybatis_baizhi_emp ;
 
 CREATE TABLE mybatis_baizhi_emp(
 	id VARCHAR(36) PRIMARY KEY,
 	NAME VARCHAR(40),
 	age INT,
-	birthday DATE
+	bir DATE
 );
 
-INSERT INTO mybatis_baizhi_emp(id ,NAME,age,birthday) VALUES('1','xiaowei',21,NOW());
-INSERT INTO mybatis_baizhi_emp(id ,NAME,age,birthday) VALUES('2','xiaowang',23,NOW());
-INSERT INTO mybatis_baizhi_emp(id ,NAME,age,birthday) VALUES('25','xiaowang',25,NOW());
-INSERT INTO mybatis_baizhi_emp(id ,NAME,age,birthday) VALUES('26','xiaowang',26,NOW());
-INSERT INTO mybatis_baizhi_emp(id ,NAME,age,birthday) VALUES('27','xiaowang',27,NOW());
+INSERT INTO mybatis_baizhi_emp(id ,NAME,age,bir) VALUES('1','xiaowei',21,NOW());
+INSERT INTO mybatis_baizhi_emp(id ,NAME,age,bir) VALUES('2','xiaowang',23,NOW());
+INSERT INTO mybatis_baizhi_emp(id ,NAME,age,bir) VALUES('25','xiaowang',25,NOW());
+INSERT INTO mybatis_baizhi_emp(id ,NAME,age,bir) VALUES('26','xiaowang',26,NOW());
+INSERT INTO mybatis_baizhi_emp(id ,NAME,age,bir) VALUES('27','xiaowang',27,NOW());
 
-select id,name,age,birthday bir  from mybatis_baizhi_emp ;
+select id,name,age, bir  from mybatis_baizhi_emp ;
 
 
 
@@ -66,7 +67,15 @@ END;
 select * from t_book;
 
 
+/*
+SQLyog Ultimate v12.5.1 (64 bit)
+MySQL - 5.6.11
+*********************************************************************
+*/
+/*!40101 SET NAMES utf8 */;
 
+insert into `mybatis_baizhi_book` (`id`, `name`, `publishDate`, `price`, `author`) values('1','leo','2020-12-12','22','leo');
+insert into `mybatis_baizhi_book` (`id`, `name`, `publishDate`, `price`, `author`) values('2','wei','2020-12-12','33','gousheng');
 
 ----------------------------------------------------------------------------------
 
