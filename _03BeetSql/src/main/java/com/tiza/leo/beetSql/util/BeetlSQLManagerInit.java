@@ -82,6 +82,11 @@ public class BeetlSQLManagerInit {
         }
     }
 
+    /**
+     * 读取properties 方式一
+     * @param filePath
+     * @throws IOException
+     */
     private void getProperties(String filePath) throws IOException {
         Properties props=new Properties();
         InputStream inputStream= this.getClass().getResourceAsStream(filePath);
@@ -92,8 +97,6 @@ public class BeetlSQLManagerInit {
         dbUrl = props.getProperty("jdbc.url","");
         dbUser =props.getProperty("jdbc.username","");
         dbPassword =props.getProperty("jdbc.password","");
-
-
     }
 
 
