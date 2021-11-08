@@ -1,11 +1,7 @@
 package com.tz.leo.jdbcTemplateTest;
 
-import cn.hutool.Hutool;
-import cn.hutool.core.date.DateUnit;
-import cn.hutool.http.HttpUtil;
-import  cn.hutool.core.util.RandomUtil;
+import cn.hutool.core.util.RandomUtil;
 import com.tz.leo.jdbcTemplateTest.controller.UserInfoController;
-import com.tz.leo.jdbcTemplateTest.dao.impl.UserInfoDaoImpl;
 import com.tz.leo.jdbcTemplateTest.entity.UserInfo;
 import com.tz.leo.jdbcTemplateTest.util.JacksonUtil;
 import com.tz.leo.jdbcTemplateTest.util.SpringUtil;

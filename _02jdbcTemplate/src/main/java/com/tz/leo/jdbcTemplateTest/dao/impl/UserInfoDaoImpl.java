@@ -21,18 +21,11 @@ public class UserInfoDaoImpl extends BaseDao implements IUserInfoDAO {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-
     @Override
     public int add(UserInfo userInfo) {
         return jdbcTemplate.update("insert into jdbc_template_user  (ui_id,ui_is_login,ui_is_admin,ui_name) values (?,?,?,? )",
                 userInfo.getUiId(),userInfo.getUiIsLogin(),userInfo.getUiIsAdmin(),userInfo.getUiName());
     }
-
-   /* @Override
-    public int add(UserInfo userInfo) {
-        return jdbcTemplate.update("insert into jdbc_template_user  (ui_id,ui_is_login,ui_is_admin,uti_id,ori_id,ui_login_name,ui_password,ui_image_url,ui_name,ui_sex,ui_job,ui_code,ui_mobile,ui_email,ui_phone,ui_fax,ui_address,ui_memo,ui_last_login_time,ui_last_login_ip,ui_login_num,ui_is_deleted,ui_insert_time,ui_update_time,ui_delete_time,ui_insert_id,ui_update_id,ui_delete_id,ori_code,ui_sap_code,ui_last_login_type,ui_charge_type,ui_is_bind_info,ui_sms_code ) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,? )",
-                userInfo.getUiId(),userInfo.getUiIsLogin(),userInfo.getUiIsAdmin(),userInfo.getUtiId(),userInfo.getOriId(),userInfo.getUiLoginName(),userInfo.getUiPassword(),userInfo.getUiImageUrl(),userInfo.getUiName(),userInfo.getUiSex(),userInfo.getUiJob(),userInfo.getUiCode(),userInfo.getUiMobile(),userInfo.getUiEmail(),userInfo.getUiPhone(),userInfo.getUiFax(),userInfo.getUiAddress(),userInfo.getUiMemo(),userInfo.getUiLastLoginTime(),userInfo.getUiLastLoginIp(),userInfo.getUiLoginNum(),userInfo.getUiIsDeleted(),userInfo.getUiInsertTime(),userInfo.getUiUpdateTime(),userInfo.getUiDeleteTime(),userInfo.getUiInsertId(),userInfo.getUiUpdateId(),userInfo.getUiDeleteId(),userInfo.getOriCode(),userInfo.getUiSapCode(),userInfo.getUiLastLoginType(),userInfo.getUiChargeType(),userInfo.getUiIsBindInfo(),userInfo.getUiSmsCode());
-    }*/
 
     @Override
     public int update(UserInfo userInfo) {
