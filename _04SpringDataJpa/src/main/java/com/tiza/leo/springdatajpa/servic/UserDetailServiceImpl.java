@@ -1,7 +1,7 @@
 package com.tiza.leo.springdatajpa.servic;
 
-//import com.mysql.cj.util.StringUtils;
-import com.mysql.jdbc.StringUtils;
+import com.mysql.cj.util.StringUtils;
+//import com.mysql.jdbc.StringUtils;
 import com.tiza.leo.springdatajpa.model.UserDetail;
 import com.tiza.leo.springdatajpa.param.UserDetailParam;
 import com.tiza.leo.springdatajpa.repository.UserDetailRepository;
