@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/xgzx?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://192.168.121.38:3306/xgzx?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
     username: root
-    password: 123456
+    password: root
 #家庭计算机  root  root  , 工作计算机   root  123456
 
 mybatis:
