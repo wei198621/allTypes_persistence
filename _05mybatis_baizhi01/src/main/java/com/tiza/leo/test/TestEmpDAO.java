@@ -20,6 +20,7 @@ import java.util.UUID;
 /**
  * Author: tz_wl
  * Date: 2020/12/11 10:42
+ * Date: 2021/11/20 10:42
  * Content:
  */
 public class TestEmpDAO {
@@ -35,13 +36,19 @@ public class TestEmpDAO {
      * @throws IOException
      */
     @Test
-    public void testFindById() throws IOException {
-        Reader resourceAsReader = Resources.getResourceAsReader("mybatis-config.xml");
-        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(resourceAsReader);
-        SqlSession sqlSession = sqlSessionFactory.openSession();
-        EmpDAO empDAO = sqlSession.getMapper(EmpDAO.class);
-        Emp emp = empDAO.findById("1");
-        System.out.println("emp = " + emp);
+    public void testFindById()  {
+        try {
+            Reader resourceAsReader = Resources.getResourceAsReader("mybatis-config.xml");
+            SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(resourceAsReader);
+            SqlSession sqlSession = sqlSessionFactory.openSession();
+            EmpDAO empDAO = sqlSession.getMapper(EmpDAO.class);
+            Emp emp = empDAO.findById("1");
+            System.out.println("emp = " + emp);
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("e.getMessage() is : "+e.getMessage());
+            System.out.println("e.getLocalizedMessage() is : "+e.getLocalizedMessage());
+        }
     }
 
 
@@ -102,7 +109,7 @@ public class TestEmpDAO {
 
     }
 
-    //测试插入
+    //测试插入  高级了一点， 封装了获取sqlSession 的方法MybatisUtil
     @Test
     public void testInsert(){
         SqlSession sqlSession = MybatisUtil.getSqlSession();

@@ -13,8 +13,8 @@ public class SpringdatajpaApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(SpringdatajpaApplication.class, args);
-        /*UserController userController=new UserController();
-        userController.find();*/
+        UserController userController=new UserController();
+        userController.find();
     }
 
 }

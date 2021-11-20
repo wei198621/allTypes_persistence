@@ -12,7 +12,6 @@
     <context:property-placeholder  location="classpath*:/*.properties"></context:property-placeholder>
     <!--    02  加载*.xml文件-->
 
-
     <!--    03 数据源  数据源datasource jdbcTemplate 与jdbc.properties 是一组 不管是oracle mySql 此处不要动，只要动 jdbc.properties就行  -->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
         <!-- 基本属性 url、user、password -->

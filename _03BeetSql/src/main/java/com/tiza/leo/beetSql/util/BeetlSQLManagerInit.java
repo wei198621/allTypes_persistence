@@ -28,7 +28,7 @@ import java.util.Properties;
  *                     , source    dbDriver, dbUrl, dbUser, dbPassword
  *                     )
  */
-@Component
+/*@Component*/
 public class BeetlSQLManagerInit {
 
     private static String dbUrl = "";
@@ -98,9 +98,5 @@ public class BeetlSQLManagerInit {
         dbUser =props.getProperty("jdbc.username","");
         dbPassword =props.getProperty("jdbc.password","");
     }
-
-
-
-
 
 }

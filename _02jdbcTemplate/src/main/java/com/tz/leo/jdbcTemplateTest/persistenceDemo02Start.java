@@ -7,6 +7,7 @@ import com.tz.leo.jdbcTemplateTest.util.JacksonUtil;
 import com.tz.leo.jdbcTemplateTest.util.SpringUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.BeanFactory;
 
 import java.math.BigDecimal;
 

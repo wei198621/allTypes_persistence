@@ -1,3 +1,55 @@
+CREATE TABLE `mybatis_baizhi_dept` (
+  `id` varchar(36) NOT NULL,
+  `NAME` varchar(40) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `mybatis_baizhi_emps` (
+  `id` varchar(36) NOT NULL,
+  `NAME` varchar(40) DEFAULT NULL,
+  `age` int(11) DEFAULT NULL,
+  `bir` date DEFAULT NULL,
+  `salary` decimal(7,2) DEFAULT NULL,
+  `deptId` varchar(36) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `mybatis_baizhi_student` (
+  `id` varchar(36) NOT NULL,
+  `NAME` varchar(40) DEFAULT NULL,
+  `age` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
+CREATE TABLE `mybatis_baizhi_student_course` (
+  `id` bigint NOT NULL,
+  `sid` int DEFAULT NULL,
+  `cid` int DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+
+CREATE TABLE `mybatis_baizhi_course` (
+  `id` varchar(36) NOT NULL,
+  `NAME` varchar(40) DEFAULT NULL,
+  `note` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
+
+insert INTO mybatis_baizhi_student (id,NAME,age) values (1,'leo',33);
+insert INTO mybatis_baizhi_student (id,NAME,age) values (2,'cherry',34);
+
+insert INTO mybatis_baizhi_course (id,NAME,note) values (1,'chinese','haha');
+insert INTO mybatis_baizhi_course (id,NAME,note) values (2,'english','haha');
+
+insert INTO mybatis_baizhi_student_course (id,sid,cid) values (1,1,1);
+insert INTO mybatis_baizhi_student_course (id,sid,cid) values (2,1,2);
+
+
 测试步骤
 1.  TestEmpDAO      测试一对一
 2.  TestDeptDAO     测试一对多

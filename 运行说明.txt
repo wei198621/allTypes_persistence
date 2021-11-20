@@ -1,13 +1,17 @@
 
 https://blog.csdn.net/wei198621/article/details/110150995
 具体说明在上面的博客中
+https://github.com/wei198621/allTypes_persistence
+代码在这个位置
+
 
 ********************************    01jdbc    ****************************
-
-
-
+连接本地zhan99笔记本 mysql  数据库
+查询 xgzx 这个库，的所有表。  2021-11-19 运行成功
 
 ********************************    02 jdbcTemplate    ****************************
+使用技术及框架   spring / 三层机构 / Jackson  / jdbcTemplate
+
 0201
   引入 spring 相关
       spring-core
@@ -49,13 +53,13 @@ https://blog.csdn.net/wei198621/article/details/110150995
      配置  jdbc.properties 为 oracle 版本  运行       persistenceDemo02Start  , 查看数据库变化  ，注意oralce数据库要把新增值删除了
 
 
-
-
-
-
-
 ********************************   03 BeetSql     ****************************
 
+注意点是，要在 applicationContext.xml 中声明bean的实例化方法，Init ,
+Init 方法中实例化 static SQLManager sqlManager ;
+其他地方需要调用就执行sqlManager.* , 比如： sqlManager.unique(BeetlUser.class,id);
+    <!--  BeetlSQLManagerInit 需要实例化 SQLManager 所以需要init方法  -->
+    <bean class="com.tiza.leo.beetSql.util.BeetlSQLManagerInit" id="beetlSQLManagerInit"  init-method="init" />
 
 0301
   引入 spring 相关
@@ -109,13 +113,32 @@ https://blog.csdn.net/wei198621/article/details/110150995
 
 
 ********************************    04 Jpa    ****************************
-运行起来，当前看不到效果，需要学习后升级-----20201125
+运行起来，当前看不到效果，需要学习后升级-----20201125    40%
 
 
 
-********************************   05MyBatis     ****************************
+
+********************************   05MyBatis_baizhi01     ****************************
+最原始版本的 mybatis ,jar 包都是自己放在 Lib  文件夹下的
+2. 新建lib文件夹，放入必要的jar包
+3. pom 增加
 
 
+
+********************************    05MyBatis_baizhi03_complex_plus       ****************************
+包含比较复杂的员工选课   员工--课程--选课表 等关系
+还是没有用spring
+
+
+
+********************************    05springboot_mybatis_xml    ****************************
+使用springBoot , SpringBootTest 测试数据
+
+
+
+********************************    06springboot_mybatis_annotation    ****************************
+
+springboot 比较全面的 mybatis  UserMapper
 
 
 ********************************        ****************************

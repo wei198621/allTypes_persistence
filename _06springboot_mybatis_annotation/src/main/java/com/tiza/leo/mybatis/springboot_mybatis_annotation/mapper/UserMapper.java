@@ -3,7 +3,16 @@ package com.tiza.leo.mybatis.springboot_mybatis_annotation.mapper;
 import com.tiza.leo.mybatis.springboot_mybatis_annotation.enums.UserSexEnum;
 import com.tiza.leo.mybatis.springboot_mybatis_annotation.model.User;
 import com.tiza.leo.mybatis.springboot_mybatis_annotation.param.UserParam;
-import org.apache.ibatis.annotations.*;
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Result;
+import org.apache.ibatis.annotations.Results;
+import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.SelectProvider;
+import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.UpdateProvider;
+import org.apache.ibatis.annotations.Delete;
 
 import java.util.List;
 import java.util.Map;

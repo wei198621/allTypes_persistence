@@ -2,18 +2,22 @@ package com.tiza.leo.beetSql.controller;
 
 import com.tiza.leo.beetSql.entity.ApiReturnObject;
 import com.tiza.leo.beetSql.entity.BeetlUser;
+import com.tiza.leo.beetSql.persistenceDemo03Start;
 import com.tiza.leo.beetSql.util.BeetlSQLManagerInit;
 import org.beetl.sql.core.SQLManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Author: tz_wl
  * Date: 2020/3/30 15:17
  * Content:
  */
-//@Component(value = "userInfoController88888")    //注意此处不要用 @Component 注解，因为方法中需要sqlManager,需要执行其init方法
+//@Component(value = "userInfoController88888") //注意此处不要用 @Component 注解，因为方法中需要sqlManager,需要执行其init方法
 //@Component 注解无法做到这一点  ，所以在 xml 中 配置bean进行依赖注入
 public class UserInfoController {
 
+    private  Logger logger = LoggerFactory.getLogger(UserInfoController.class);
     private SQLManager sqlManager;
 
     public void init() {
@@ -55,6 +59,8 @@ public class UserInfoController {
      */
    // @PostMapping("/find")
     public Object find(int id){
+        logger.error("===========find =====33=====");
+        System.out.println("=================find========44==================");
         try {
             BeetlUser beetlUser =sqlManager.unique(BeetlUser.class,id);
             if(beetlUser !=null){
