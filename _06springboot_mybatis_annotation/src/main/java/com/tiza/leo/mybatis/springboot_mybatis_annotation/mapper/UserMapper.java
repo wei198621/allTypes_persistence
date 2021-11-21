@@ -27,6 +27,7 @@ public interface UserMapper {
 	List<User> getAll();
 
 
+
 	@SelectProvider(type = UserSql.class,method = "getList")
 	List<User> getList(UserParam userParam);
 
