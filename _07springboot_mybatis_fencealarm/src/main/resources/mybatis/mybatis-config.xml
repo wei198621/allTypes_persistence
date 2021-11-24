@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+   <!-- <properties resource="jdbc.properties"/>-->
+
+    <typeAliases>
+        <!-- 设置别名 -->
+        <typeAlias alias="Integer" type="java.lang.Integer" />
+        <typeAlias alias="Long" type="java.lang.Long" />
+        <typeAlias alias="HashMap" type="java.util.HashMap" />
+        <typeAlias alias="LinkedHashMap" type="java.util.LinkedHashMap" />
+        <typeAlias alias="ArrayList" type="java.util.ArrayList" />
+        <typeAlias alias="LinkedList" type="java.util.LinkedList" />
+    </typeAliases>
+
+<!--    &lt;!&ndash; 配置数据库连接的环境 &ndash;&gt;
+    <environments default="development">
+        <environment id="development">
+            <transactionManager
+                    type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver"
+                          value="${jdbc.driver}"/>
+                <property name="url"
+                          value="${jdbc.url}"/>
+                <property name="username"
+                          value="${jdbc.username}"/>
+                <property name="password"
+                          value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+        &lt;!&ndash; 引⼊Mapper.xml &ndash;&gt;
+        <package name=""/>
+    </mappers>-->
+</configuration>

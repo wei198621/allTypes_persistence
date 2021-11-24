@@ -1,0 +1,30 @@
+#spring:
+#  datasource:
+#    driver-class-name: com.mysql.jdbc.Driver
+#    url: jdbc:mysql://192.168.121.38:3306/xgzx?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
+#    username: root
+#    password: root
+#家庭计算机  root  root  , aliyun   root  root
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://leoaliyun:3306/local_xgzx?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: root
+
+#  进出口测试服务器
+#spring:
+#  datasource:
+#    driver-class-name: org.postgresql.Driver
+#    url: jdbc:postgresql://10.90.12.239:5432/iot_sc
+#    username: postgres
+#    password: postgres
+
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  type-aliases-package: com.tiza.leo.mybatis.springboot_mybatis_fencealarm.model
+
+server:
+  port: 3281
